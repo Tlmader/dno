@@ -10,6 +10,8 @@ class Character{
 	private int hpRate;
 	private int goldFind;
 	
+	private int score;
+	
 	private boolean blade;
 	
 	public Character(String _playerName, int _hp, int _gold, int _str, int _will, int _cun, int _hpRate, int _goldFind, boolean _blade){
@@ -69,7 +71,7 @@ class Character{
 		}
 		if(modifier <= 0){
 			gold = gold + modifier;
-			DNO.story(gold + " remains in your pockets!");
+			DNO.story(gold+" gold remains in your pockets!");
 		}
 	}
 	
@@ -130,6 +132,10 @@ class Character{
 		return blade;
 	}
 	
+	public String getName(){
+		return playerName;
+	}
+	
 	public String getStats(){
 		String stats = "\nPlayer Name: " + playerName + "\nHealth: " + hp + "\nGold: " + gold + "\nStrength: " + str + "\nWillpower: " + will + "\nCunning: " + cun + "\nHeal Rate: " + hpRate + "\nGold Find: " + goldFind;
 		return stats;
@@ -138,9 +144,7 @@ class Character{
 	public void gameOver(){
 		DNO.story("Your story ends here, " + playerName + ". Maybe you'll pass the class when you try again next semester.");
 		int score = gold + (str * 20) + (will * 20) + (cun * 20);
-		if(hp > 0){
-			score = score + hp * 10;
-		}
+
 		DNO.story("Final score: " + score);
 		
 		if(score > 1000){
@@ -156,6 +160,28 @@ class Character{
 			DNO.story("Learn to dungeon.");
 		}
 		
+		System.exit(0);
+	}
+	
+	public void endGame(){
+	
+		DNO.story("Final score: " + score);
+		
+		if(score > 3000){
+			DNO.story("A: Not a bad job.");
+		}		
+		if(score > 1000){
+			DNO.story("B: I'm still not impressed.");
+		}
+		else if(score > 500){
+			DNO.story("C: You could have done better than that, dead man.");
+		}
+		else if(score > 200){
+			DNO.story("D: That was quite... the academic performance.");
+		}
+		else if(score > 0){
+			DNO.story("F: Learn to dungeon.");
+		}	
 		System.exit(0);
 	}
 	

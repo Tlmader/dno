@@ -17,7 +17,6 @@ public class DNO{
 	
 	public static void main(String[] args){
 	
-	levelNightmareBlackJack();
 	player = mainMenu();
 	story(player.getStats());
 	event();
