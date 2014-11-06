@@ -26,7 +26,7 @@ public class MonsterBattle{
 		
 		while(DNO.player.getHp() > 0 && monsterHp > 0){
 
-			String choiceText = ("Choose your attack stance:\n* AGGRESSIVE\n* DEFENSIVE\n* QUICK");
+			DNO.fastStory("Choose your attack stance:\n* AGGRESSIVE\n* DEFENSIVE\n* QUICK");
 			String c1 = "aggressive";
 			String c2 = "defensive";
 			String c3 = "quick";
